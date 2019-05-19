@@ -17,3 +17,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Equipamento(models.Model):
+    equipamento = models.CharField(max_length=100)
+    marca = models.Charfield(max_length=100)
+    modelo = models.Charfield(max_length=100)
