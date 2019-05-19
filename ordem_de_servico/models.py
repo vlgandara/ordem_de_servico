@@ -20,5 +20,5 @@ class Post(models.Model):
 
 class Equipamento(models.Model):
     equipamento = models.CharField(max_length=100)
-    marca = models.Charfield(max_length=100)
-    modelo = models.Charfield(max_length=100)
+    marca = models.CharField(max_length=100)
+    modelo = models.CharField(max_length=100)
