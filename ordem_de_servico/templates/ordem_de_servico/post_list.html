@@ -1,22 +1,17 @@
 <html>
     <head>
-        <title>Registro de Ordem de Servico</title>
+        <title>Tabela de Equipamentos para Manutencao</title>
     </head>
     <body>
         <div>
-            <h1><a href="/">Ordem de Servico</a></h1>
+            <h1><a href="/">Equipamentos</a></h1>
         </div>
 
-        <div>
-            <p>publicado: 09.06.2019, 17:01</p>
-            <h2><a href="">Teste</a></h2>
-            <p>Teste 1.</p>
-        </div>
-
-        <div>
-            <p>publicado: 09.06.2019, 17:01</p>
-            <h2><a href="">Teste 2</a></h2>
-            <p>Teste 2.</p>
-        </div>
-    </body>
-</html>
+        {% for equipamento in equipamentos %}
+    <div>
+        <h1><a href="{% url 'equipment_detail' pk=equipamento.pk %}">{{ equipamento.equipamento }}</a></h1>
+        <p>marca: {{ equipamento.marca|linebreaksbr }}</p>
+	<p>modelo: {{ equipamento.modelo|linebreaksbr }}</p>
+	<p>n_serie: {{ equipamento.n_serie|linebreaksbr }}</p>
+    </div>
+{% endfor %}

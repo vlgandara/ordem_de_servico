@@ -22,6 +22,7 @@ class Equipamento(models.Model):
     equipamento = models.CharField(max_length=100)
     marca = models.CharField(max_length=100)
     modelo = models.CharField(max_length=100)
+    n_serie = models.CharField(max_length=100)
     published_date = models.DateTimeField(
             blank=True, null=True)
 

@@ -1,0 +1,15 @@
+{% extends 'ordem_de_servico/base.html' %}
+
+{% block content %}
+    <div class="equipamento">
+        {% if equipamento.published_date %}
+            <div class="date">
+                {{ equipamento.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ equipamento.equipamento }}</h1>
+        <p>{{ equipamento.marca|linebreaksbr }}</p>
+	<p>{{ equipamento.modelo|linebreaksbr }}</p>
+	<p>{{ equipamento.n_serie|linebreaksbr }}</p>
+    </div>
+{% endblock %}

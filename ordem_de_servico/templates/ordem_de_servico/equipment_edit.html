@@ -1,0 +1,9 @@
+{% extends 'ordem_de_servico/base.html' %}
+
+{% block content %}
+    <h1>Novo equipamento</h1>
+    <form method="EQUIPAMENTO" class="equipment-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
