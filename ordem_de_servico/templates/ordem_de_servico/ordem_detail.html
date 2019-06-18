@@ -1,0 +1,24 @@
+{% extends 'ordem_de_servico/base1.html' %}
+
+{% block content %}
+    <div class="ordem">
+        {% if ordem.datasolicitacao %}
+            <div class="date">
+                {{ ordem.datasolicitacao }}
+            </div>
+        {% endif %}
+        <h1>{{ ordem.nome }}</h1>
+	<p>{{ ordem.equipamento|linebreaksbr }}</p>
+        <p>{{ ordem.marca|linebreaksbr }}</p>
+	<p>{{ ordem.modelo|linebreaksbr }}</p>
+	<p>{{ ordem.n_serie|linebreaksbr }}</p>
+	<p>{{ ordem.n_os|linebreaksbr }}</p>
+	<p>{{ ordem.empresa|linebreaksbr }}</p>
+	<p>{{ ordem.cpf|linebreaksbr }}</p>
+	<p>{{ ordem.end|linebreaksbr }}</p>
+	<p>{{ ordem.cep|linebreaksbr }}</p>
+	<p>{{ ordem.telefone|linebreaksbr }}</p>
+	<p>{{ ordem.falha|linebreaksbr }}</p>
+	<p>{{ ordem.graunecessidade|linebreaksbr }}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Servicos pendentes</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Ordens de Servicos pendentes</a></h1>
+        </div>
+
+        {% for ordem in ordens %}
+    <div>
+        <h1><a href="{% url 'ordem_detail' pk=ordem.pk %}">{{ ordem.nome }}</a></h1>
+	<p>equipamento: {{ ordem.equipamento|linebreaksbr }}</p>
+        <p>marca: {{ ordem.marca|linebreaksbr }}</p>
+	<p>modelo: {{ ordem.modelo|linebreaksbr }}</p>
+	<p>n_serie: {{ ordem.n_serie|linebreaksbr }}</p>
+	<p>n_os: {{ ordem.n_os|linebreaksbr }}</p>
+	<p>empresa: {{ ordem.empresa|linebreaksbr }}</p>
+	<p>cpf: {{ ordem.cpf|linebreaksbr }}</p>
+	<p>end: {{ ordem.end|linebreaksbr }}</p>
+	<p>cep: {{ ordem.cep|linebreaksbr }}</p>
+	<p>telefone: {{ ordem.telefone|linebreaksbr }}</p>
+	<p>falha: {{ ordem.falha|linebreaksbr }}</p>
+	<p>graunecessidade: {{ ordem.graunecessidade|linebreaksbr }}</p>
+    </div>
+{% endfor %}

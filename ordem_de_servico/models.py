@@ -32,3 +32,30 @@ class Equipamento(models.Model):
 
     def __str__(self):
         return self.equipamento
+
+class OrdemServico(models.Model):
+    equipamento = models.CharField(max_length=100)
+    marca = models.CharField(max_length=100)
+    modelo = models.CharField(max_length=100)
+    n_serie = models.CharField(max_length=100)
+    n_os = models.CharField(max_length=100)
+    nome = models.CharField(max_length=100)
+    empresa = models.CharField(max_length=100)
+    cpf = models.CharField(max_length=100)
+    end = models.CharField(max_length=100)
+    cep = models.CharField(max_length=100)
+    telefone = models.CharField(max_length=100)
+    falha = models.CharField(max_length=100)
+    graunecessidade = models.CharField(max_length=100)
+    datasolicitacao = models.DateTimeField(
+        blank=True, null=True)
+
+    def publish(self):
+        self.datasoliciatacao = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.nome
+        
+        
+        

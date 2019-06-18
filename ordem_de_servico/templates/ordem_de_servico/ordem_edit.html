@@ -1,8 +1,8 @@
-{% extends 'ordem_de_servico/base.html' %}
+{% extends 'ordem_de_servico/base1.html' %}
 
 {% block content %}
-    <h1>Novo Equipamento</h1>
-    <form method="POST" class="equipment-form">{% csrf_token %}
+    <h1>Nova Ordem de Servico</h1>
+    <form method="POST" class="ordem-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
