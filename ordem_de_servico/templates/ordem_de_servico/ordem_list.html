@@ -1,26 +1,23 @@
+{% load static %}
 <html>
     <head>
         <title>Servicos pendentes</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/ordemservico.css' %}">
     </head>
     <body>
-        <div>
-            <h1><a href="/">Ordens de Servicos pendentes</a></h1>
+        <div class="page-header2">
+            <h1><center><b><font color="#6B63BE">Ordens de Servicos Pendentes</font></b></center></h1>
         </div>
 
         {% for ordem in ordens %}
     <div>
-        <h1><a href="{% url 'ordem_detail' pk=ordem.pk %}">{{ ordem.nome }}</a></h1>
-	<p>equipamento: {{ ordem.equipamento|linebreaksbr }}</p>
-        <p>marca: {{ ordem.marca|linebreaksbr }}</p>
-	<p>modelo: {{ ordem.modelo|linebreaksbr }}</p>
-	<p>n_serie: {{ ordem.n_serie|linebreaksbr }}</p>
-	<p>n_os: {{ ordem.n_os|linebreaksbr }}</p>
-	<p>empresa: {{ ordem.empresa|linebreaksbr }}</p>
-	<p>cpf: {{ ordem.cpf|linebreaksbr }}</p>
-	<p>end: {{ ordem.end|linebreaksbr }}</p>
-	<p>cep: {{ ordem.cep|linebreaksbr }}</p>
-	<p>telefone: {{ ordem.telefone|linebreaksbr }}</p>
-	<p>falha: {{ ordem.falha|linebreaksbr }}</p>
-	<p>graunecessidade: {{ ordem.graunecessidade|linebreaksbr }}</p>
+	<center>
+        	<h1><a href="{% url 'ordem_detail' pk=ordem.pk %}">{{ ordem.nome }}</a></h1>
+       		<p>equipamento: {{ ordem.equipamento|linebreaksbr }}</p>
+        	<p>empresa: {{ ordem.empresa|linebreaksbr }}</p>
+        	<p>telefone: {{ ordem.telefone|linebreaksbr }}</p>
+	</center>
     </div>
 {% endfor %}

@@ -1,17 +1,29 @@
+{% load static %}
 <html>
     <head>
         <title>Tabela de Equipamentos para Manutencao</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/ordem_de_servico.css' %}">
     </head>
     <body>
-        <div>
-            <h1><a href="/">Equipamentos</a></h1>
-        </div>
-
-        {% for equipment in equipments %}
-    <div>
-        <h1><a href="{% url 'equipment_detail' pk=equipment.pk %}">{{ equipment.equipamento }}</a></h1>
-        <p>marca: {{ equipment.marca|linebreaksbr }}</p>
-	<p>modelo: {{ equipment.modelo|linebreaksbr }}</p>
-	<p>n_serie: {{ equipment.n_serie|linebreaksbr }}</p>
-    </div>
-{% endfor %}
+        
+	<div class="page-header"> <h1><b><font color="white"><center>Equipamentos</center></font></b></h1></div>
+		         
+		
+                  <div class="content container">
+                    <div class="row">
+                      <div class="col-md-1">
+                          {% block content %}
+                          {% endblock %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% for equipment in equipments %}
+                <div>
+                    <h3><center><a href="{% url 'equipment_detail' pk=equipment.pk %}"><font color="purple">{{ equipment.equipamento }}</font></a></center></h3>
+                </div> 
+                {% endfor %}
+	    
+            
